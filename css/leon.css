@@ -7,10 +7,9 @@ body {
 }
 :root {
   --mainColor: #10cab7;
+  --backgroundColor: #f6f6f6;
 }
-.parent {
-  background-color: #eee;
-}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -19,6 +18,7 @@ body {
   text-transform: capitalize;
 }
 /* very small */
+
 @media (min-width: 375px) {
   .container {
     width: 360px;
@@ -49,7 +49,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 19px auto;
+  margin: 20px auto;
 }
 .header .logo-pic {
   margin-bottom: auto;
@@ -97,16 +97,17 @@ body {
   right: 0;
   min-width: 200px;
   top: calc(100% + 6px);
-  background-color: #f6f6f6;
+  background-color: var(--backgroundColor);
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
 }
 .header .links ul::before {
   content: "";
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent #f6f6f6 transparent;
+  border-color: transparent transparent var(--backgroundColor) transparent;
   position: absolute;
   right: 0;
   top: -20px;
@@ -129,7 +130,7 @@ body {
   background-image: url(../images/landing.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(100vh - 62px);
+  height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,3 +151,48 @@ body {
   line-height: 2;
 }
 /* End Landing */
+
+/* Start Features*/
+.features-section {
+  background-color: var(--backgroundColor);
+  padding: 60px 0;
+}
+.features-section .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.features-section .container .feat {
+  text-align: center;
+  line-height: 1.7;
+}
+.features-section .container .feat i {
+  color: var(--mainColor);
+  font-size: 3em;
+}
+.features-section .container .feat h3 {
+  font-weight: 800;
+}
+.features-section .container .feat p {
+  color: #777;
+}
+/* End Features */
+
+/*Start Services*/
+.services-section .title {
+  text-align: center;
+  position: relative;
+}
+.services-section .title h1 {
+  opacity: 0.1;
+  font-size: 100px;
+}
+.services-section .title p{
+position: absolute;
+color: #797979;
+font-size: 20px;
+right: -50px;
+left: -50px;
+top:70px;
+}
+/*End Services*/
